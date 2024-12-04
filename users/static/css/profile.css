@@ -1,0 +1,96 @@
+/* profile.css */
+.profile-container {
+    max-width: 800px; /* Limit width for better readability */
+    margin: 40px auto; /* Center container with margin */
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Increased shadow for depth */
+    font-family: 'Arial', sans-serif; /* Consistent font family */
+}
+
+/* Profile heading */
+.profile-heading {
+    text-align: center;
+    font-size: 32px; /* Increased font size for prominence */
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Profile information layout */
+.profile-info {
+    display: flex;
+    align-items: flex-start; /* Align items to the start */
+    justify-content: space-around; /* Space items evenly */
+    margin-bottom: 20px;
+}
+
+/* Profile picture styling */
+.profile-pic {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3498db; /* Solid border color */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+    margin-right: 20px; /* Space to the right of the image */
+    padding: 5px;
+}
+
+/* Profile details styling */
+.profile-details {
+    flex-grow: 1; /* Allow the details to take remaining space */
+}
+
+.profile-details h4 {
+    margin: 30px 0;
+    color: #333;
+    font-weight: 500; /* Semi-bold for emphasis */
+    padding-left: 100px;
+
+}
+
+/* Primary button styling */
+a.btn-primary {
+    display: inline-block;
+    padding: 12px 24px; /* Adequate padding for touch targets */
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px; /* Slightly increased border radius */
+    font-weight: 500; /* Bold for emphasis */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    text-align: center; /* Center text in the button */
+    margin-left: 330px;
+    margin-top: 20px;
+}
+
+/* Button hover effect */
+a.btn-primary:hover {
+    background-color: #2980b9; /* Darker color on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .profile-info {
+        flex-direction: column; /* Stack profile info on smaller screens */
+        align-items: center; /* Center items */
+    }
+
+    .profile-pic {
+        margin-bottom: 20px; /* Space below the image */
+    }
+
+    .profile-details {
+        text-align: center; /* Center text on smaller screens */
+    }
+
+    .actions-heading {
+        font-size: 22px; /* Smaller heading for mobile */
+    }
+
+    a.btn-primary {
+        width: 100%; /* Full width buttons on mobile */
+        text-align: center; /* Center text in button */
+    }
+}

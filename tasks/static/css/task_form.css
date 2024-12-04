@@ -1,0 +1,78 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Adjust width for form */
+    margin: 5px auto;
+}
+
+/* Heading */
+h2 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Elements */
+form p {
+    margin-bottom: 15px; /* Space between fields */
+}
+
+form input[type="text"],
+form input[type="date"],
+form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+form input[type="text"]:focus,
+form input[type="date"]:focus,
+form textarea:focus {
+    border-color: #4CAF50; /* Focus color */
+    outline: none; /* Remove outline */
+}
+
+/* Save Button */
+button[type="submit"] {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        width: 90%; /* Full width on small screens */
+    }
+}

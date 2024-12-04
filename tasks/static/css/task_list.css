@@ -1,0 +1,106 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+/* Heading */
+h2 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Add Task Button */
+.add-task {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.add-task:hover {
+    background-color: #45a049;
+}
+
+/* Task Table */
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.task-table th, .task-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.task-table th {
+    background-color: #f2f2f2;
+    color: black;
+    font-weight: bold;
+}
+
+.task-table td {
+    color: #555;
+}
+
+.task-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.task-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Table Buttons */
+.button {
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+/* Edit Button */
+.button-edit {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+.button-edit:hover {
+    background-color: #45a049;
+}
+
+/* Delete Button */
+.button-delete {
+    background-color: #f44336;
+    color: white;
+    border: 1px solid #f44336;
+}
+
+.button-delete:hover {
+    background-color: #d32f2f;
+}

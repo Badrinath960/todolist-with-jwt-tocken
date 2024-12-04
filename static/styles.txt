@@ -1,0 +1,200 @@
+General Styles
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    padding-right: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #4CAF50;
+    padding: 15px;
+}
+
+/* Align nav bar items */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between; /* Space between left and right groups */
+    align-items: center;
+}
+
+/* Left side items */
+nav .nav-left {
+    display: flex;
+    gap: 15px;
+}
+
+/* Right side items */
+nav .nav-right {
+    margin-left: auto; /* Pushes the right-side item to the far right */
+}
+
+/* Common styles for all nav links */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 3px;
+    background-color: #4CAF50;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #45a049;
+}
+
+/* table style */
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.task-table th, .task-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.task-table th {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+.task-table td a {
+    color: rgb(250, 250, 251);
+    text-decoration: none;
+}
+
+.task-table td a:hover {
+    text-decoration: underline;
+}
+
+.add-task {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.add-task:hover {
+    background-color: #45a049;
+}
+
+/* table button css */
+
+.button {
+    padding: 8px 16px;
+    margin-right: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+/* Edit button styles */
+.button-edit {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+.button-edit:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+}
+
+/* Delete button styles */
+.button-delete {
+    background-color: #f44336; /* Red */
+    color: white;
+    border: 1px solid #f44336;
+}
+
+.button-delete:hover {
+    background-color: #d32f2f;
+    border-color: #d32f2f;
+}
+
+/* Form Styles */
+form {
+    margin-top: 20px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    padding-right: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Miscellaneous */
+h2 {
+    color: #333;
+}
+
+a {
+    color: #4CAF50;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+}

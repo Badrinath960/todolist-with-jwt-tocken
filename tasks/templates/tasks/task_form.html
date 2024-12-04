@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Task Form{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/task_form.css' %}">
+<h2>{{ form.instance.pk|yesno:"Update Task,Create Task" }}</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+{% endblock %}

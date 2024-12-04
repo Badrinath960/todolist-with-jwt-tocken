@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}User Profile{% endblock %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}"> <!-- Link to the external CSS -->
+
+    <div class="profile-container">
+        <h2 class="profile-heading">User Profile</h2>
+
+        <div class="profile-info">
+            <div class="profile-image">
+                <!-- Check if profile image exists, otherwise show default image -->
+                {% if user.profile and user.profile.profile_image %}
+                    <img src="{{ user.profile.profile_image.url }}" alt="Profile Image" class="profile-pic">
+                {% else %}
+                    <img src="{% static 'images/default-profile.png' %}" alt="Default Profile Image" class="profile-pic">
+                {% endif %}
+            </div>
+            <div class="profile-details">
+                <h4><strong>Username:</strong> {{ user.username }}</h4>
+                <h4><strong>Email:</strong> {{ user.email }}</h4>
+                <h4><strong>First Name:</strong> {{ user.first_name }}</h4>
+                <h4><strong>Last Name:</strong> {{ user.last_name }}</h4>
+            </div>
+        </div>
+
+        <hr>
+
+        <a href="{% url 'update-profile' %}" class="btn btn-primary">Update Profile</a>
+    </div>
+{% endblock %}

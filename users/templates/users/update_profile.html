@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Update Profile{% endblock %}
+{% block content %}
+<div class="profile-container">
+    <h2>Update Profile</h2>
+    <form method="POST" enctype="multipart/form-data" class="profile-form"> <!-- Include enctype for file uploads -->
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        <div class="image-upload">
+            {{ profile_form.profile_image.label_tag }} <!-- Label for profile image -->
+            <input type="file" name="profile_image" accept="image/*" id="profileImageInput" class="file-input"> <!-- File input for image -->
+            
+            <!-- Check if a profile image exists, otherwise show the default image -->
+            {% if profile_form.instance.profile_image %}
+                <img id="imagePreview" src="{{ profile_form.instance.profile_image.url }}" alt="Profile Image" class="profile-image"/>
+            {% else %}
+                <img id="imagePreview" src="{% static 'images/default-profile.png' %}" alt="Default Profile Image" class="profile-image"/>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn">Update</button>
+    </form>
+    <a href="{% url 'profile' %}" class="back-link">Back to Profile</a> <!-- Link back to profile page -->
+</div>
+
+<script>
+    // JavaScript for image preview
+    document.getElementById('profileImageInput').addEventListener('change', function(event) {
+        const reader = new FileReader();
+        reader.onload = function() {
+            const imagePreview = document.getElementById('imagePreview');
+            imagePreview.src = reader.result;
+            imagePreview.style.display = 'block'; // Show image preview
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    });
+</script>
+
+<!-- Add your CSS here -->
+<style>
+    .profile-container {
+        padding: 20px 90px 30px 200px;
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .profile-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image-upload {
+        margin-bottom: 20px;
+    }
+
+    .file-input {
+        margin-top: 10px;
+    }
+
+    .profile-image {
+        max-width: 150px;
+        max-height: 150px;
+        border-radius: 50%;
+        margin-top: 10px;
+    }
+
+    .btn {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100px;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+    .back-link {
+        display: inline-block;
+        margin-top: 15px;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .back-link:hover {
+        text-decoration: underline;
+    }
+
+    .back-link {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .back-link:hover {
+        background-color: #0056b3;
+        text-decoration: none;
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}To-Do App{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="sidebar">
+        <!-- Profile Section -->
+        <div class="profile-section">
+            {% if user.profile.profile_image %}
+                <img src="{{ user.profile.profile_image.url }}" alt="Profile Image" class="profile-img">
+            {% else %}
+                <img src="{% static 'image/default-profile.png' %}" alt="Default Profile Image" class="profile-img">
+            {% endif %}
+            <p class="profile-name">{{ user.username }}</p>
+        </div>
+        
+        <ul>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'details' %}">Home</a></li>
+                <li><a href="{% url 'task-list' %}">Tasks</a></li>
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+                <li>
+                    <form action="{% url 'logout-confirm' %}" method="get" style="display: inline;">
+                        <button type="submit" class="logout-btn">Logout</button>
+                    </form>
+                </li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    
+    <div class="content">
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+
+    <script src="{% static 'scripts.js' %}"></script>
+</body>
+</html>
